@@ -93,32 +93,19 @@
     background:var(--bg-soft);
   }
 
-  .video-frame{
-    position:relative;
+  .native-video-frame{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#000;
+    margin-bottom:10px;
+    line-height:0;
+  }
+  .native-video-frame video{
+    display:block;
     width:100%;
-    padding-top:56.25%;
-    border-radius:12px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    background:var(--bg-soft);
-    margin-bottom:10px;
+    max-height:70vh;
   }
-  .video-frame iframe{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    border:0;
-  }
-
-  .insta-frame{
-    display:flex;
-    justify-content:center;
-    border-radius:12px;
-    overflow:hidden;
-    margin-bottom:10px;
-    background:var(--bg-soft);
-    border:1px solid var(--line);
-  }
-  .insta-frame iframe{ border-radius:12px !important; }
 
   .link-row{
     display:flex;
@@ -152,6 +139,25 @@
     margin-bottom:12px;
   }
 
+  .photo-frame{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--bg-soft);
+    margin-bottom:10px;
+  }
+  .photo-frame img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .photo-caption{
+    font-size:13px;
+    color:var(--cream-dim);
+    margin: 8px 2px 0;
+    line-height:1.5;
+  }
+
   footer{
     text-align:center;
     color:var(--cream-dim);
@@ -178,8 +184,8 @@
 
     <!-- EDITA ESTE TÍTULO Y SUBTÍTULO -->
     <p class="eyebrow">Una selección para ti</p>
-    <h1>Algunas cosas que me<br>hicieron pensar en ti</h1>
-    <p class="subtitle">El resto te lo escribí a mano.</p>
+    <h1>Cosas que me hicieron<br>pensar en ti</h1>
+    <p class="subtitle">Con cariño.</p>
   </header>
 
   <!-- ======================================================= -->
@@ -202,25 +208,50 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 02 — EL VIDEO (reel personal)                             -->
-  <!-- Solo carga bien una vez publicada la página (no en         -->
-  <!-- file:// local), porque necesita el script de Instagram.    -->
+  <!-- 02 — MOMENTO 1                                            -->
   <!-- ======================================================= -->
   <section>
-    <p class="section-label"><span class="idx">02</span> El video</p>
+    <p class="section-label"><span class="idx">02</span> Un momento</p>
     <div class="item">
-      <div class="insta-frame">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZYicRbxWHu/" data-instgrm-version="14"></blockquote>
+      <div class="photo-frame">
+        <img src="momento-1.jpg" alt="Momento 1">
       </div>
-      <div class="link-row">
-        <a href="https://www.instagram.com/reel/DZYicRbxWHu/" target="_blank">Ver en Instagram ↗</a>
+      <p class="photo-caption"><!-- línea corta sobre esta foto --></p>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- 03 — EL VIDEO (reel, archivo local)                       -->
+  <!-- El archivo reel.mp4 debe subirse junto al index.html      -->
+  <!-- en el mismo repositorio de GitHub.                         -->
+  <!-- ======================================================= -->
+  <section>
+    <p class="section-label"><span class="idx">03</span> El video</p>
+    <div class="item">
+      <div class="native-video-frame">
+        <video controls playsinline preload="metadata">
+          <source src="reel.mp4" type="video/mp4">
+        </video>
       </div>
       <p class="video-caption"><!-- línea corta sobre por qué elegiste este --></p>
     </div>
   </section>
 
   <!-- ======================================================= -->
-  <!-- 03 — BONUS: Ma meilleure                                  -->
+  <!-- 04 — MOMENTO 2                                            -->
+  <!-- ======================================================= -->
+  <section>
+    <p class="section-label"><span class="idx">04</span> Otro momento</p>
+    <div class="item">
+      <div class="photo-frame">
+        <img src="momento-2.jpg" alt="Momento 2">
+      </div>
+      <p class="photo-caption"><!-- línea corta sobre esta foto --></p>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- BONUS: Ma meilleure                                       -->
   <!-- ======================================================= -->
   <section>
     <span class="bonus-tag">Bonus</span>
@@ -241,8 +272,6 @@
   <footer>hecho con calma, para ti</footer>
 
 </div>
-
-<script async src="//www.instagram.com/embed.js"></script>
 
 </body>
 </html>
